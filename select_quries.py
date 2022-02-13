@@ -4,7 +4,6 @@ from getpass import getpass
 
 engine = sqlalchemy.create_engine(f'postgresql://{input("Enter username: ")}:{getpass("Enter password: ")}@{input("Enter host to connect")}:{input("Enter port your DB is listening to: ")}/{input("Enter DB name: ")}')
 connection = engine.connect()
-connection = engine.connect()
 pprint(connection.execute('''
 SELECT name, released FROM albums
 WHERE released = 2018;
